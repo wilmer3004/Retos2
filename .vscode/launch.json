@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Reto2",
+            "request": "launch",
+            "mainClass": "Reto2",
+            "projectName": "Retos2_7a9fec53"
+        },
+        {
+            "type": "java",
+            "name": "Reto3",
+            "request": "launch",
+            "mainClass": "Reto3",
+            "projectName": "Retos2_7a9fec53"
+        },
+        {
+            "type": "java",
             "name": "Reto3",
             "request": "launch",
             "mainClass": "Reto3",

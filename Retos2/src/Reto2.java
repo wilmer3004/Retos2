@@ -17,8 +17,8 @@ public class Reto2 {
         // Creamos un bucle para almacenar el nombre del competidor 
 
         for (int i = 0; i < nombre.length; i++) {
-            System.out.println("Ingrese el nombre del participante #" + contador);
             contador+=1;
+            System.out.println("Ingrese el nombre del participante #" + contador);
             nombre [i] = entrada.nextLine(); 
         }
         // Creamos un bucle para recolectar el tiempo del competidor
@@ -37,7 +37,7 @@ public class Reto2 {
             contador = contador + 1;
         }
 
-        // Creamos un bucle para organizar los tiempos de menor a mayor y asu vez los nombres
+        // Creamos un bucle para organizar los tiempos de mayor a menor y asu vez los nombres
   for (int k = 0; k < n; k++) {
         // Declaramos las variables dentro del bucle para que vuelvan a 0 y 1 una vez que se haya ejecutado el siguiente bucle
             Double  nu = 0.0;
@@ -47,13 +47,13 @@ public class Reto2 {
             for (int j = 0; j < (n-1); j++) {
                 // Verificamos si el numero siguiente a la posición 0 es mayor al de la posición 0 y asi sucesivamente mientras la posición j sea menos a la cantidad total de números ingresados menos 1, ademas validamos que cont no sea mayor a la cantidad total de números ingresados
                 if (maxMin [cont] > maxMin [j] && cont<= n) {
-                    // Almacenamos temporalmente dentro de una variable el numero que estaba en la posición j para asi no perder el valor que estaba en esta posición dentro del arreglo
+                    // Almacenamos temporalmente dentro de una variable el numero y en otro el nombre que estaba en la posición j para asi no perder el valor que estaba en esta posición dentro del arreglo
                     nu = maxMin [j];
                     nomb = nombre[j];
                     // Asignamos el valor del arreglo maxmin de la posición j a el de la posición cont de acuerdo a si se cumple la condición
                     maxMin [j] = maxMin [cont];
                     nombre [j] = nombre [cont];
-                    // Reasignamos a la posición cont el valor almacenado en la variable nu
+                    // Reasignamos a la posición cont el valor almacenado en la variable nu y nomb
                     maxMin [cont] = nu;
                     nombre [cont]= nomb; 
                 

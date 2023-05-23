@@ -28,7 +28,7 @@ public class Reto1 {
         for (int j = 0; j < nota.length; j++) {
             suma = suma + nota[j];
         }
-        // Creamos un bucle para realizar el promedio que tienen las notas 
+        //  realizamos la operación del promedio que tienen las notas 
         promedio = suma/n;
         System.out.println("Las notas que usted ingreso de la materia "+materia+" fueron: ");
         // Creamos un bucle para mostrar las notas ingresadas
@@ -44,6 +44,9 @@ public class Reto1 {
         }
         else if (promedio > 4 && promedio <= 5) {
             System.out.println("\nEl promedio de las notas fue de " + promedio +  " por lo tanto aprobaste con buenos resultados");            
+        }
+        else {
+            System.out.println("El promedio es mayor que 5 o menor que 0 por lo tanto alguna de las notas que usted dígito es errónea");
         }
         // Limpiamos buffer
         entrada.close();

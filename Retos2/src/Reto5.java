@@ -76,6 +76,7 @@ public class Reto5 {
 
         // Creamos un bucle para que se ejecute siempre y cuando vidas sea mayor a 0
         for (int vidas = 5; vidas > 0; vidas--) {
+        System.out.println("Usted actualmente cuenta con #" + vidas + " vidas.");
         System.out.println("Las parejas actualmente encontradas son la siguientes: \n");
         // Creamos un bucle para rellenar la matriz concentrate1 y el primer bucle sera para recorrer filas
         for (int i = 0; i < 4; i++) {
@@ -124,12 +125,14 @@ public class Reto5 {
         // ------------------------------------------------------------------------------------------
 
         // Creamos una condicional para evaluar que no se digite un valor mayor o menor a los indicados
-        if (fila1 >3 || fila2>3 || columna1>3 || columna2>3 || fila1 <0 || fila2<0 || columna1<0|| columna2<0){
+        if (fila1==fila2 && columna1==columna2) {
+            System.out.println("\nIngreso dos posiciones iguales por lo tanto no sera evaluado\n");
+        }
+        else if (fila1 >3 || fila2>3 || columna1>3 || columna2>3 || fila1 <0 || fila2<0 || columna1<0|| columna2<0){
             System.out.println("Ingreso un valor no valido en una fila o columna");
         }
         // Creamos una condición para que me compare las dos posiciones que ingreso el usuario
-        if (concentrate2 [fila1][columna1] == concentrate2[fila2][columna2]) {
-            System.out.println("Felicidades acaba de encontrar una pareja");
+        else if (concentrate2 [fila1][columna1] == concentrate2[fila2][columna2]) {
             // Si se cumple la condición le asignaremos los valores de la matriz concentrate2 a la matriz concentrate1 según la variable fila1 y la variable columna1 y lo mismo con la tercera matriz concentrate3 solo que a esta le asignaremos un 1
             concentrate1 [fila1][columna1] = concentrate2 [fila1][columna1];
             concentrate3 [fila1][columna1] =1;
@@ -137,16 +140,43 @@ public class Reto5 {
             concentrate1 [fila2][columna2] = concentrate2 [fila2][columna2];
             concentrate3 [fila2][columna2] = 1;
             vidas+=1;
+            System.out.println("\nFelicidades acaba de encontrar una pareja\n");
         } 
         else {
             System.out.println("\nLas posiciones ingresadas no son iguales\n");
         }
         
+        // .....................................................................................
 
+        // Creamos un bucle para recorrer filas y comparar los valores de la matriz concentrate3 
 
+        for (int fila = 0; fila < 4; fila++) {
+            // Creamos un bucle para recorrer columnas
+         for (int columna = 0; columna < 4; columna++) {
+            if (concentrate3[fila][columna] == 1) {
+                cont+=1;
+            }
+         }
+            
+        }
+
+        // Creamos una condición para comparar si cont == 16 si es asi se le restaran todas las vidas si no cont volverá a ser 0
+
+        if (cont==16) {
+            vidas= vidas-10;
+        } else {
+            cont=0;
+        }
         }
  
         // ---------------------------------------------------------------------------------
+        // Creamos una condición parara evaluar si el usuario gano o perdió
+        if (cont==16) {
+            System.out.println("Felicidades logro descubrir todas las parejas por lo tanto usted gano.");
+        } else {
+            System.out.println("Lo sentimos usted acaba de perder por el motivo de que sus vidas han llegado a 0.");
+        }
+
 
 
         // Limpiamos el buffer

@@ -30,7 +30,7 @@ public class Reto4 {
     System.out.println();
     // Mostramos en una tabla los resultados almacenados en la matriz
     // Creamos un bucle para recorrer filas
-    for (int x = 0; x < 8; x++) {   
+    for (int x = 0; x < 8; x++) {       
         // Creamos un bucle para recorrer las posiciones de la maquina expendedora
         for (int y = 0; y < 4; y++) {
             // Creamos una condición para verificar en que iteración va a mostrar los nombres y la posición del producto

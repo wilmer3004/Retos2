@@ -18,7 +18,7 @@ public class Reto5 {
         String [][] concentrate1 = new String [4][4];
          // Esta segunda matriz la utilizaremos para almacenar los datos que va a tener el concentrate
         String [][] concentrate2 = new String [4][4];
-         // Esta primera matriz la utilizaremos para poder comparar si el usuario ya adivino algún campo
+         // Esta tercera matriz la utilizaremos para poder comparar si el usuario ya adivino la palabra con 0 y 1       
         int [][] concentrate3 = new int [4][4];
         
         // ---------------------------------------------------------------------------------
@@ -50,39 +50,27 @@ public class Reto5 {
             }
         }
 
-        // creamos un bucle para rellenar con 0 la matriz concentrate3 que sera la que nos servirá para que no se sume mas puntos si el usuario repite un numero 
+        // creamos un bucle para rellenar con 0 la matriz concentrate3 que sera la que nos servirá para que comparar si el usuario gana o pierde el juego
 
-        // Creamos un bucle para rellenar la matriz concentrate1 con ? y el primer bucle sera para recorrer filas 
+        // Creamos un bucle para rellenar la matriz concentrate3 con 0 y el primer bucle sera para recorrer filas 
         for (int x = 0; x < 4; x++) {
             // Creamos un bucle para recorrer columnas
             for (int y = 0; y < 4; y++) {
-                // Asignamos un incognito a la posición x = i & y = j 
+                // Asignamos un 0 a la posición x = i & y = j 
                 concentrate3 [x][y] = 0;
             }
         }
-
-        // ---------------------------------------------------------------------------------
-
-        // Creamos un bucle para rellenar la matriz concentrate1 y el primer bucle sera para recorrer filas
-        for (int i = 0; i < 4; i++) {
-            // Creamos un bucle para recorrer columnas
-            for (int j = 0; j < 4; j++) {
-                // Asignamos un incognito a la posición x = i & y = j 
-                concentrate1 [i][j] = "?";
-            }
-        }
-
         // ---------------------------------------------------------------------------------
 
         // Creamos un bucle para que se ejecute siempre y cuando vidas sea mayor a 0
         for (int vidas = 5; vidas > 0; vidas--) {
         System.out.println("Usted actualmente cuenta con #" + vidas + " vidas.");
         System.out.println("Las parejas actualmente encontradas son la siguientes: \n");
-        // Creamos un bucle para rellenar la matriz concentrate1 y el primer bucle sera para recorrer filas
+        // Creamos un bucle para mostrar la matriz concentrate1 y el primer bucle sera para recorrer filas
         for (int i = 0; i < 4; i++) {
              // Creamos una condición para que se ejecute una sola vez para que se muestre la posición de columnas
              if (i == 0) {
-                // Imprimimos una primera posición bacía
+                // Imprimimos una primera posición vacía
                 System.out.print(" " + "\t"); 
                 // Creamos un bucle para que muestre las posiciones de las columnas
                 for (int k = 0; k < concentrate3.length; k++) {
@@ -124,10 +112,11 @@ public class Reto5 {
 
         // ------------------------------------------------------------------------------------------
 
-        // Creamos una condicional para evaluar que no se digite un valor mayor o menor a los indicados
+        // Creamos una condicional para evaluar que no se digiten dos posiciones iguales
         if (fila1==fila2 && columna1==columna2) {
             System.out.println("\nIngreso dos posiciones iguales por lo tanto no sera evaluado\n");
         }
+        // Creamos una condicional para evaluar que no se digite un valor mayor o menor a los indicados
         else if (fila1 >3 || fila2>3 || columna1>3 || columna2>3 || fila1 <0 || fila2<0 || columna1<0|| columna2<0){
             System.out.println("Ingreso un valor no valido en una fila o columna");
         }
